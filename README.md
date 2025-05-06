@@ -1,4 +1,5 @@
-#AI-powered PDF Summarizer
+
+# AI-powered PDF Summarizer
 
 **AI-powered PDF Summarizer** is a cutting-edge PDF summarization tool that leverages state-of-the-art AI models to extract and synthesize information from PDF documents. Built with Meta's LLaMA 4 MOE Maverick model and powered by Groq's inference engine, it provides blazing-fast, high-precision summaries for any PDF document.
 
@@ -69,72 +70,72 @@ The pipeline is optimized for parallel processing and handles documents of varyi
    ```bash
    git clone https://github.com/yourusername/AlphaExtract.git
    cd AlphaExtract
-Install dependencies using uv:
+   ```
 
-bash
-Copy
-Edit
-curl -LsSf https://astral.sh/uv/install.sh | sh
-uv sync
-Create a .env file in the root directory and add your Groq API key:
+2. Install dependencies using uv:
+   ```bash
+   curl -LsSf https://astral.sh/uv/install.sh | sh
+   uv sync
+   ```
 
-ini
-Copy
-Edit
-GROQ_API_KEY=your_actual_groq_api_key
-Run the application:
+3. Create a `.env` file in the root directory and add your Groq API key:
+   ```
+   GROQ_API_KEY=your_actual_groq_api_key
+   ```
 
-bash
-Copy
-Edit
-streamlit run main.py
-How the API Key is Loaded
-In the code, the following snippet loads your .env file securely:
+4. Run the application:
+   ```bash
+   streamlit run main.py
+   ```
 
-python
-Copy
-Edit
+---
+
+## How the API Key is Loaded
+
+In the code, the following snippet loads your `.env` file securely:
+
+```python
 from dotenv import load_dotenv
 import os
 
 load_dotenv()
 api_key = os.getenv("GROQ_API_KEY")
-Make sure .env is in the root directory and not checked into version control (add it to .gitignore).
+```
 
-Usage
-Access the web interface at http://localhost:7860
+Make sure `.env` is in the root directory and not checked into version control (add it to `.gitignore`).
 
-Upload your PDF document using the sidebar
+---
 
-Wait for the processing to complete
+## Usage
 
-View the generated summary
+1. Access the web interface at `http://localhost:7860`
+2. Upload your PDF document using the sidebar
+3. Wait for the processing to complete
+4. View the generated summary
+5. Download the summary as a PDF document
 
-Download the summary as a PDF document
+---
 
-Docker Deployment
-Build the Docker image:
+## Docker Deployment
 
-bash
-Copy
-Edit
-docker build -t alphaextract .
-Run the container:
+1. Build the Docker image:
+   ```bash
+   docker build -t alphaextract .
+   ```
 
-bash
-Copy
-Edit
-docker run -p 7860:7860 --env-file .env alphaextract
-The application will be available at http://localhost:7860.
+2. Run the container:
+   ```bash
+   docker run -p 7860:7860 --env-file .env alphaextract
+   ```
 
-Project Structure
-css
-Copy
-Edit
+The application will be available at `http://localhost:7860`.
+
+---
+
+## Project Structure
+
+```
 AlphaExtract/
-├── .github/
-│   └── workflows/
-│       └── dockerhubPush.yaml
 ├── src/
 │   ├── components/
 │   │   ├── extractPdfDetails.py
@@ -150,33 +151,30 @@ AlphaExtract/
 ├── prompts.yaml
 ├── .env
 └── pyproject.toml
-Screenshots
-Project Demo
-
-Complete demonstration of PDF upload, processing, and summary generation
-
-Application Interface
-
-The clean and intuitive application interface
-
-License
-This project is licensed under the MIT License.
-
-Author
-Created with ❤️ by Rauhan Ahmed Siddiqui.
-
-For questions or support, please open an issue on the GitHub repository.
-
-yaml
-Copy
-Edit
+```
 
 ---
 
-Would you like me to save this as a file and return the download link?
+## Screenshots
 
+- Project Demo  
+  ![Demo](./demo/demo2.gif)  
+  *Complete demonstration of PDF upload, processing, and summary generation*
 
+- Application Interface  
+  ![Interface](./demo/demo1.png)  
+  *The clean and intuitive application interface*
 
+---
 
+## License
 
+This project is licensed under the MIT License.
 
+---
+
+## Author
+
+Created with ❤️ by [**Gurudath-G**]([https://github.com/RauhanAhmed/AlphaExtract](https://github.com/Gurudath-G/PDF-Summerizer)).
+
+For questions or support, please open an issue on the GitHub repository.
