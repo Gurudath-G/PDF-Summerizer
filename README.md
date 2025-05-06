@@ -58,7 +58,7 @@ The pipeline is optimized for parallel processing and handles documents of varyi
 ## Requirements
 
 - Python 3.10 or higher
-- Dependencies listed in `pyproject.toml`
+- Dependencies listed in `requirements.txt`
 - `.env` file containing Groq API key
 - Poppler utils for PDF processing
 
@@ -72,10 +72,9 @@ The pipeline is optimized for parallel processing and handles documents of varyi
    cd AlphaExtract
    ```
 
-2. Install dependencies using uv:
+2. Install dependencies using pip:
    ```bash
-   curl -LsSf https://astral.sh/uv/install.sh | sh
-   uv sync
+   pip install requirements.txt
    ```
 
 3. Create a `.env` file in the root directory and add your Groq API key:
@@ -113,22 +112,6 @@ Make sure `.env` is in the root directory and not checked into version control (
 3. Wait for the processing to complete
 4. View the generated summary
 5. Download the summary as a PDF document
-
----
-
-## Docker Deployment
-
-1. Build the Docker image:
-   ```bash
-   docker build -t alphaextract .
-   ```
-
-2. Run the container:
-   ```bash
-   docker run -p 7860:7860 --env-file .env alphaextract
-   ```
-
-The application will be available at `http://localhost:7860`.
 
 ---
 
